@@ -5,7 +5,8 @@ var express = require('express');
 var router = express.Router();
 
 router.get('/', function(req, res) {
-    res.render('index', { title: 'Calendar' });
+    res.render('calendar' );
 });
+
 
 module.exports = router;

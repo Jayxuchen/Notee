@@ -1,0 +1,19 @@
+extends layout
+
+link(rel='stylesheet', href='lib/fullcalendar.css')
+script(src='lib/jquery.min.js')
+script(src='lib/moment.min.js')
+script(src='lib/fullcalendar.js')
+
+block content
+
+    #calendar
+    script.
+        $(document).ready(function() {
+            $('#calendar').fullCalendar({
+                dayClick: function() {
+                alert('a day has been clicked!');
+                }
+            // put your options and callbacks here
+            });
+        });
