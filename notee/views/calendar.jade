@@ -1,18 +1,24 @@
 extends layout
 
-link(rel='stylesheet', href='lib/fullcalendar.css')
-script(src='lib/jquery.min.js')
-script(src='lib/moment.min.js')
-script(src='lib/fullcalendar.js')
 
 block content
-
+    head
+        link(rel='stylesheet', href='/stylesheets/fullcalendar.css')
+        script(type='text/javascript', src='/javascripts/jquery.min.js')
+        script(src='/javascripts/moment.min.js')
+        script(src='/javascripts/fullcalendar.js')
     #calendar
     script.
+
+        var dateObj;
+        
         $(document).ready(function() {
             $('#calendar').fullCalendar({
-                dayClick: function() {
-                alert('a day has been clicked!');
+
+                dayClick: function(date, resourceObj) {
+                console.log(Object.keys(resourceObj));        
+                window.open('/notes','_self');
+                
                 }
             // put your options and callbacks here
             });

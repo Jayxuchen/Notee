@@ -4,8 +4,13 @@
 var express = require('express');
 var router = express.Router();
 
-router.get('/', function(req, res) {
+router.get('/:date', function(req, res) {
+    var date=req.params['date'];
+    console.log(date);
     res.render('calendar' );
+
+
+
 });
 
 
